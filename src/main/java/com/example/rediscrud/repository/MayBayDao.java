@@ -16,10 +16,13 @@ public class MayBayDao {
         return mayBay;
     }
     public List<MayBay> findAll(){
+        List<MayBay> list = template.opsForHash().values("maybay");
         return template.opsForHash().values("maybay");
+
     }
     public MayBay findByMayBayId(int id){
         return (MayBay) template.opsForHash().get("maybay",id);
+
     }
     public String deleteMayBay(int id){
         template.opsForHash().delete("maybay",id);

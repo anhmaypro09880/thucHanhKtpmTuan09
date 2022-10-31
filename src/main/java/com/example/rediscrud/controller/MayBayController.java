@@ -16,11 +16,12 @@ public class MayBayController {
     public MayBay saveMayBay(@RequestBody MayBay mayBay){
         return mayBayDao.save(mayBay);
     }
-    @GetMapping("/{id}")
+    @GetMapping("/getAll")
     public List<MayBay> getAllMayBay(){
         return mayBayDao.findAll();
+
     }
-    @GetMapping("/{id}")
+    @GetMapping("getMayBay/{id}")
     public MayBay findMayBayById(@PathVariable int id){
         return mayBayDao.findByMayBayId(id);
     }
